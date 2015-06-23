@@ -63,3 +63,10 @@ float: right!important;
 .doghouse {
   height: 120%;
 }
+
+#floating-button {
+  background-color: red;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
