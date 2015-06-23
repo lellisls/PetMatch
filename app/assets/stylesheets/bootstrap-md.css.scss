@@ -1,6 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  padding-top: 100px;
+}
+
+
 .navbar-collapse.collapse {
 display: block!important;
 }
@@ -66,7 +71,17 @@ float: right!important;
 
 #floating-button {
   background-color: red;
-  position: absolute;
+  position: fixed;
   right: 16px;
   bottom: 16px;
+}
+
+.user-photo {
+  width: 48px;
+  height: 48px;
+}
+
+.photo-content {
+  margin-top: 10px;
+  width: 100%;
 }
