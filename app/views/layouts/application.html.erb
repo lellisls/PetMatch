@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PetMatch</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-left">
+          <li> <a class="navbar-brand" href="#"> <i class="mdi-action-home"></i> </a> </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li data-match-route="/"><a href="#/page-one" title="Notificações"><i class="mdi-social-notifications" ></i></a></li>
+          <li data-match-route="/"><a href="#/page-two/sub-a" title=""><i class="mdi-action-face-unlock"></i></a></li>
+      </ul> <!-- nav -->
+    </div> <!-- container -->
+  </div> <!-- navbar -->
+  <div class="container-fluid main">
+    <div class="row">
+      <nav class="col-xs-2 menu">
+        <ul>
+          <li class="withripple">
+            <a href="#"><i class="mdi-social-people-outline"></i>Grupos</a>
+          </li>
+          <li class="withripple">
+            <a href="#"><i class="mdi-navigation-close"></i>Sair</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="pages col-xs-9">
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      $.material.init();
+    });
+  </script>
+</body>
+</html>
