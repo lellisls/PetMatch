@@ -43,10 +43,28 @@
       </div>
     </div>
   </div>
-  <a href="#" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add "></a>
+  <div class="modal" id="modal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Postar</h4>
+            </div>
+            <div class="modal-body">
+                <p>Postando</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <butto onclick="$('#modal').modal('show')" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add " rel = "tooltip" data-toggle="tooltip" data-placement="left" title="" data-original-title="Enviar mensagem"></a>
   <script type="text/javascript">
     $( document ).ready(function() {
       $.material.init();
+      $("[rel='tooltip']").tooltip();
     });
   </script>
 </body>
