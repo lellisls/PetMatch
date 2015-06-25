@@ -132,14 +132,18 @@
                 ink.css({top: y+'px', left: x+'px'}).addClass("animate");
 
             });
-
+            
             sub_fab_btns.find('.sub_fab_btn').on('mousedown', function(e){
                 if ($(this).attr('data-link-href').length > 0){
                     if ($(this).attr('data-link-target')){
                         window.open($(this).attr('data-link-href'), $(this).attr('data-link-target'));
-                    }else{
+                    }else if ( $(this).attr('data-link-href') ) {
                         window.location.href = $(this).attr('data-link-href');
                     }
+                }else{
+                    var target = $(this).attr('onclick');
+                    console.log(target);
+                    $(target).modal('show');
                 }
 
             });
