@@ -82,7 +82,9 @@
             <a href="#"><i class="mdi-communication-message"></i>Mensagens</a>
           </li>
           <li class="withripple">
-            <a href="#"><i class="mdi-social-people-outline"></i>Grupos</a>
+            <%= link_to controller: "bootstrap", action: "groups" do %>
+              <i class="mdi-social-people-outline"></i>Grupos
+            <% end %>
           </li>
           <li class="divider"></li>
           <li class="withripple">
