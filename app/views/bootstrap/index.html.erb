@@ -33,3 +33,25 @@
   </div>
 </div>
 
+<% (0..3).each do %>
+
+<div class="well well-lg">
+  <div class="media">
+      <div class="media-left">
+        <img data-src="holder.js/48x48" src="" class="user-photo">
+      </div>
+      <div class="media-body">
+        <div class="post-heading">
+          <h4 class="media-heading"><%= Faker::Name.name %></h4>
+          <p><%= Faker::Number.digit %>h</p>
+        </div>
+        <div class="post-content">
+          <%= Faker::Lorem.paragraph(2, true) %>
+          <% if rand(0..100) < 25 then %>
+            <img data-src="holder.js/800x400" src="" class="photo-content"></img>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>
+<% end %>

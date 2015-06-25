@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'placeholdit'
 gem 'faker'
+gem 'holder_rails'
 
 group :development, :test do
   gem 'sqlite3'

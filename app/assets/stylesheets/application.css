@@ -14,3 +14,24 @@
  *= require_self
  *= require bootstrap-material-design
  */
+ 
+.doghouse {
+  height: 150%;
+}
+
+#floating-button {
+  background-color: red;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+
+.user-photo {
+  width: 48px;
+  height: 48px;
+}
+
+.photo-content {
+  margin-top: 10px;
+  max-width: 100%
+}

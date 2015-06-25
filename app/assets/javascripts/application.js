@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-material-design
+//= require holder
 //= require_tree .
 
 var setTooltip = function (elm, placement, text) {
