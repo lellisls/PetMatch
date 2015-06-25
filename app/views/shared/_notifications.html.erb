@@ -11,43 +11,15 @@
             </a>
         </div>
         <li class="divider"></li>
+        <% (2..3).each do | i | %>
         <div class="notifications-wrapper">
             <a class="content" href="#">
             <div class="notification-item">
-            <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
-            <p class="item-info">Marketing 101, Video Assignment</p>
-            </div>
-            </a>
-            <a class="content" href="#">
-            <div class="notification-item ">
-            <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
-            <p class="item-info">Marketing 101, Video Assignment</p>
-            </div>
-            </a>
-            <a class="content" href="#">
-            <div class="notification-item">
-            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-            <p class="item-info">Marketing 101, Video Assignment</p>
-            </div>
-            </a>
-            <a class="content" href="#">
-            <div class="notification-item">
-            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-            <p class="item-info">Marketing 101, Video Assignment</p>
-            </div>
-            </a>
-            <a class="content" href="#">
-            <div class="notification-item">
-            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-            <p class="item-info">Marketing 101, Video Assignment</p>
-            </div>
-            </a>
-            <a class="content" href="#">
-            <div class="notification-item">
-            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-            <p class="item-info">Marketing 101, Video Assignment</p>
+            <h4 class="item-title"><strong>Fulano <%= i %> </strong>  · <%= i %> days ago</h4>
+            <p class="item-info"><%=Faker::Lorem.sentence(3, true) %> ...</p>
             </div>
             </a>
         </div>
+        <% end %>
     </ul>
 </li>
