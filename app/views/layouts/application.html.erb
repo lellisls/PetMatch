@@ -78,18 +78,22 @@
     <div class="row">
       <nav id="sidebar" class="col-xs-3 col-md-2  menu" >
         <ul>
-          <li class="withripple">
-            <a href="#"><i class="mdi-communication-message"></i>Mensagens</a>
-          </li>
-          <li class="withripple">
-            <%= link_to controller: "bootstrap", action: "groups" do %>
+          <a href="#">
+            <li class="withripple">
+              <i class="mdi-communication-message"></i>Mensagens
+            </li>
+          </a>
+          <%= link_to controller: "bootstrap", action: "groups" do %>
+            <li class="withripple">
               <i class="mdi-social-people-outline"></i>Grupos
-            <% end %>
-          </li>
+            </li>
+          <% end %>
           <li class="divider"></li>
-          <li class="withripple">
-            <a href="#"><i class="mdi-navigation-close"></i>Sair</a>
-          </li>
+          <a href="#">
+            <li class="withripple">
+              <i class="mdi-navigation-close"></i>Sair
+            </li>
+          </a>
         </ul>
       </nav>
       <div class="pages col-xs-9 col-md-6 ">
