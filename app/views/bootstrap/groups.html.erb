@@ -1,35 +1,57 @@
-<div class="list-group">
-    <div class="list-group-item">
-        <div class="row-action-primary">
-            <i class="mdi-file-folder"></i>
-        </div>
-        <div class="row-content">
-            <div class="least-content">15m</div>
-            <h4 class="list-group-item-heading">Grupo 1</h4>
-            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>
+<!--<div class="list-group">-->
+<!--    <div class="list-group-item">-->
+<!--        <div class="row-action-primary">-->
+<!--            <i class="mdi-social-school"></i>-->
+<!--        </div>-->
+<!--        <div class="row-content">-->
+            <!--<div class="least-content">15m</div>-->
+<!--            <h4 class="list-group-item-heading">Grupo 1</h4>-->
+<!--            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="list-group-separator"></div>-->
+<!--    <div class="list-group-item">-->
+<!--        <div class="row-action-primary">-->
+<!--            <i class="mdi-social-domain"></i>-->
+<!--        </div>-->
+<!--        <div class="row-content">-->
+            <!--<div class="least-content">10m</div>-->
+<!--            <h4 class="list-group-item-heading">Grupo 2</h4>-->
+<!--            <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="list-group-separator"></div>-->
+<!--    <div class="">-->
+<!--        <div class="row-action-primary">-->
+<!--            <i class="mdi-social-party-mode"></i>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="row-content col-xs-6">-->
+                <!--<div class="least-content">8m</div>-->
+<!--                <h4 class="list-group-item-heading">Grupo 3</h4>-->
+<!--                <p class="list-group-item-text"></p>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="list-group-separator"></div>-->
+<!--</div>-->
+
+<% (1 .. 3).each do |i| %>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-8">
+                <h4>Grupo <%= i %></h4>
+                <p><%=Faker::Lorem.sentence(3, true) %></p>
+            </div>
+            <div class="col-xs-4">
+                <div class="btn-group">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-default">Acessar</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-danger">Deixar</a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="list-group-separator"></div>
-    <div class="list-group-item">
-        <div class="row-action-primary">
-            <i class="mdi-file-folder"></i>
-        </div>
-        <div class="row-content">
-            <div class="least-content">10m</div>
-            <h4 class="list-group-item-heading">Grupo 2</h4>
-            <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
-        </div>
-    </div>
-    <div class="list-group-separator"></div>
-    <div class="list-group-item">
-        <div class="row-action-primary">
-            <i class="mdi-file-folder"></i>
-        </div>
-        <div class="row-content">
-            <div class="least-content">8m</div>
-            <h4 class="list-group-item-heading">Grupo 3</h4>
-            <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
-        </div>
-    </div>
-    <div class="list-group-separator"></div>
 </div>
+<% end %>

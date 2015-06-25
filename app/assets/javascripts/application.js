@@ -26,8 +26,11 @@ var setTooltip = function (elm, placement, text) {
     elm.tooltip();
 }
 
-var sendMessage = function(message) {
-    $('#alert').text(message);
+var sendMessage = function(message, icon) {
+    if( icon ) {
+        message = '<i class="' + icon + '"> </i> ' + message;
+    }
+    $('#alert').html(message);
     $('#alert').fadeIn();
     $("#alert").delay(2000).fadeOut("slow", function () { $(this).hide(); });
 }
