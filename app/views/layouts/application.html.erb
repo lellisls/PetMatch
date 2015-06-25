@@ -10,241 +10,31 @@
   <%#= "<meta http-equiv='refresh' content='10'>".html_safe if Rails.env.development? %>
 </head>
 <body>
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav navbar-left">
-          <!-- <li> <a class="navbar-brand" href="#"> <i class="mdi-action-home"></i> </a> </li> -->
-          <li> <a class="navbar-brand" href="<%=request.base_url%>"> <%= image_tag('petmatch.svg', :class=>'doghouse') %> </a> </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li data-match-route="/" class="dropdown">
-            <a href="#/page-one" title="Notificações" data-toggle="dropdown" role="button" id="dLabel" data-target="#" >
-                <i class="mdi-social-notifications" ></i>
-            </a>
-            <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
-                <div class="notification-heading">
-                    <h2 class="menu-title">Notificações</h2>
-                    <a href="javascript:void(0)" class="btn btn-flat btn-primary pull-right">
-                        Ver tudo
-                        <i class="glyphicon glyphicon-circle-arrow-right"></i>
-                    </a>
-                </div>
-                <li class="divider"></li>
-                <div class="notifications-wrapper">
-                    <a class="content" href="#">
-                    <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                    </div>
-                    </a>
-                    <a class="content" href="#">
-                    <div class="notification-item ">
-                    <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                    </div>
-                    </a>
-                    <a class="content" href="#">
-                    <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                    </div>
-                    </a>
-                    <a class="content" href="#">
-                    <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                    </div>
-                    </a>
-                    <a class="content" href="#">
-                    <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                    </div>
-                    </a>
-                    <a class="content" href="#">
-                    <div class="notification-item">
-                    <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
-                    <p class="item-info">Marketing 101, Video Assignment</p>
-                    </div>
-                    </a>
-                </div>
-            </ul>
-        </li>
-        <li data-match-route="/"><a href="#/page-two/sub-a" title=""><i class="mdi-action-face-unlock"></i></a></li>
-      </ul> <!-- nav -->
-    </div> <!-- container -->
-  </div> <!-- navbar -->
+  <%= render "shared/navbar" %>
   <div class="container-fluid main">
     <div class="row">
-      <nav id="sidebar" class="col-xs-3 col-md-2  menu" >
-        <ul>
-          <a href="#">
-            <li class="withripple">
-              <i class="mdi-communication-message"></i>Mensagens
-            </li>
-          </a>
-          <%= link_to controller: "bootstrap", action: "groups" do %>
-            <li class="withripple">
-              <i class="mdi-social-people-outline"></i>Grupos
-            </li>
-          <% end %>
-          <li class="divider"></li>
-          <a href="#">
-            <li class="withripple">
-              <i class="mdi-navigation-close"></i>Sair
-            </li>
-          </a>
-        </ul>
-      </nav>
+      <%= render "shared/sidebar" %>
       <div class="pages col-xs-9 col-md-6 ">
         <div class="container-fluid">
-          <div id= "alert" class="alert alert-success" role="alert">
-            
+          <div id= "alert" class="alert alert-success" role="alert" style="display: none">
           </div>
           <%= yield %>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal" id="modal" >
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="mdi-navigation-close"></i></button>-->
-            </div>
-            <div class="modal-body">
-              <form class="form-horizontal">
-                <fieldset>
-                  <legend>Postar Texto</legend>
-                  <div class="form-group">
-                      <label for="select" class="col-lg-2 control-label">Postar como:</label>
-                      <div class="col-lg-10">
-                          <select class="form-control" id="select">
-                              <option>Vc mesmo</option>
-                              <option>Animal 1</option>
-                              <option>Animal 2</option>
-                              <option>Animal 3</option>
-                          </select>
-                      </div>
-                  </div>      
-                  <div class="form-group">
-                  <label for="textArea" class="col-lg-2 control-label">Seu texto</label>
-                  <div class="col-lg-10">
-                      <textarea class="form-control" rows="3" id="textArea"></textarea>
-                      <!--<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>-->
-                  </div>
-                  </div>
-                </fieldset>
-            </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" style="margin-left: 25px; padding-left: 10px; padding-right: 10px" ><i class="mdi-image-tag-faces"></i> </button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendMessage('Texto enviado com sucesso!')">Enviar</button>
-            </div>
-        </div>
-    </div>
-  </div>
-  <div class="modal" id="modal-foto" >
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="mdi-navigation-close"></i></button>
-            </div>
-            <div class="modal-body">
-              <form class="form-horizontal">
-                <fieldset>
-                    <legend>Postar Imagem</legend>
-                        <div class="form-group">
-                            <label for="select" class="col-lg-2 control-label">Postar como:</label>
-                            <div class="col-lg-10">
-                                <select class="form-control" id="select">
-                                    <option>Vc mesmo</option>
-                                    <option>Animal 1</option>
-                                    <option>Animal 2</option>
-                                    <option>Animal 3</option>
-                                </select>
-                            </div>
-                        </div>    
-                         <div class="form-group">
-                          <label for="inputFile" class="col-lg-2 control-label">Imagem</label>
-                          <div class="col-lg-10">
-                            <input type="text" readonly="" class="form-control floating-label" placeholder="Browse...">
-                            <input type="file" id="inputFile" multiple="">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                        <label for="textArea" class="col-lg-2 control-label">Texto</label>
-                        <div class="col-lg-10">
-                            <textarea class="form-control" rows="3" id="textArea"></textarea>
-                            <!--<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>-->
-                        </div>
-                    </div>
-            </fieldset>
-            </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="sendMessage('Foto enviada com sucesso!')">Enviar</button>
-            </div>
-        </div>
-    </div>
-  </div>
-  <div class="kc_fab_wrapper">
-      
-  </div>
-
+  <%= render "shared/postartexto" %>
+  <%= render "shared/postarfoto" %>
   
-  <!--<button onclick="" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add " rel = "tooltip" data-toggle="tooltip" data-placement="left" title="" data-original-title="Postar"></button>-->
+  <!-- Botão Ubiquo do Material Design -->
+  <div class="kc_fab_wrapper"></div>
+
   <script type="text/javascript">
-    $( document ).ready(function() {
-      $.material.init();
-    //   $('#modal').modal('show')
-    var links = [
-    {
-      "bgcolor":"#FFC107",
-      "icon":"+",
-      "id" : "postar"
-    },
-    {
-      // "url":"#",
-      "bgcolor":"#3F51B5",
-      "color":"#fffff",
-      "icon":"<i class='mdi-image-photo'></i>",
-      "target":"_blank",
-      "id" : "postar-foto"
-    },
-    {
-      // "url":"#",
-      "bgcolor":"#FF5252",
-      "color":"white",
-      "icon":"<i class='mdi-image-edit'></i>", 
-      "id" : "postar-texto"
-    }
-    ]
-    $('.kc_fab_wrapper').kc_fab(links);
-    setTooltip = function (elm, placement, text) {
-      elm.attr('rel','tooltip');
-      elm.attr('data-placement',placement);
-      elm.attr('data-toggle','tooltip');
-      elm.attr('title','');
-      elm.attr('data-original-title',text);
-      elm.tooltip();
-    }
-    $('#postar-texto').attr('onclick',"#modal");
-    $('#postar-foto').attr('onclick',"#modal-foto");
-    setTooltip( $('#postar-texto'), "left", "Texto" );
-    setTooltip( $('#postar-foto'), "left", "Imagem" );
-    setTooltip( $('#postar'), "left", "Postar" );
-    
-    sendMessage = function(message) {
-      $('#alert').text(message);
-      $('#alert').fadeIn();
-      $("#alert").delay(2000).fadeOut("slow", function () { $(this).hide(); });
-    }
-    // $('#modal').modal('show');
-    $('#alert').hide();
+    $( document ).ready(function( ) { 
+      inicializar();
     });
   </script>
+  
+  <!--<button onclick="" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add " rel = "tooltip" data-toggle="tooltip" data-placement="left" title="" data-original-title="Postar"></button>-->
 </body>
 </html>

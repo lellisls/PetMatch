@@ -1,0 +1,20 @@
+<nav id="sidebar" class="col-xs-3 col-md-2  menu" >
+    <ul>
+      <a href="#">
+        <li class="withripple">
+          <i class="mdi-communication-message"></i>Mensagens
+        </li>
+      </a>
+      <%= link_to controller: "bootstrap", action: "groups" do %>
+        <li class="withripple">
+          <i class="mdi-social-people-outline"></i>Grupos
+        </li>
+      <% end %>
+      <li class="divider"></li>
+      <a href="#">
+        <li class="withripple">
+          <i class="mdi-navigation-close"></i>Sair
+        </li>
+      </a>
+    </ul>
+</nav>
