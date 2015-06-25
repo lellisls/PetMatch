@@ -5,27 +5,27 @@ body {
   padding-top: 100px;
 }
 
-
 .navbar-collapse.collapse {
-display: block!important;
+  display: block!important;
 }
 
 .navbar-nav>li, .navbar-nav {
-float: left !important;
+  float: left !important;
 }
 
 .navbar-nav.navbar-right:last-child {
-margin-right: -15px !important;
+  margin-right: -15px !important;
 }
 
 .navbar-right {
-float: right!important;
+  float: right!important;
 }
 
 .menu {
   overflow: auto;
   padding: 0;
 }
+
 .menu, .menu * {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -34,6 +34,7 @@ float: right!important;
 .menu ul {
   padding: 0;
 }
+
 .menu ul li {
   list-style: none;
   padding: 10px 10px 10px 10px;
@@ -53,13 +54,16 @@ float: right!important;
 
 .menu ul li.active {
   background-color: #dedede;
-  position: relative;
-
 }
+
 .menu ul li:hover {
   background-color: #dedede;
-  position: relative;
 }
+
+.menu ul .divider:hover { 
+  background-color: #eee;
+}
+
 .menu ul li a {
   color: rgb(120, 120, 120);
   text-decoration: none;
@@ -84,4 +88,61 @@ float: right!important;
 .photo-content {
   margin-top: 10px;
   width: 100%;
+}
+
+/* Notifications */
+
+.glyphicon-bell {
+  font-size:1.5rem;
+}
+
+.notifications {
+  min-width:420px; 
+}
+
+.notifications-wrapper {
+  overflow:auto;
+  max-height:250px;
+}
+
+.menu-title {
+  color: #009688;
+  font-size:1.5rem;
+  display:inline-block;
+}
+
+.glyphicon-circle-arrow-right {
+  margin-left:10px;     
+}
+
+
+.notification-heading, .notification-footer  {
+  padding:2px 10px;
+}
+
+
+.dropdown-menu.divider {
+  margin:5px 0;          
+}
+
+.item-title {
+  font-size:1.3rem;
+  color:#000;
+}
+
+.notifications a.content {
+  text-decoration:none;
+}
+
+.notification-item {
+  padding:10px;
+  margin:5px;
+  background:#eee;
+  border-color:#ccc;
+  border-width: 2px;
+  border-radius: 4px;
+}
+
+.notification-item:hover {
+  background-color: #dedede;
 }
