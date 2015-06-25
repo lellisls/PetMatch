@@ -124,13 +124,45 @@
         </div>
     </div>
   </div>
-  <butto onclick="$('#modal').modal('show')" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add " rel = "tooltip" data-toggle="tooltip" data-placement="left" title="" data-original-title="Postar"></a>
+  <div class="kc_fab_wrapper">
+      
+  </div>
+
+  
+  <!--<button onclick="$('#modal').modal('show')" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add " rel = "tooltip" data-toggle="tooltip" data-placement="left" title="" data-original-title="Postar"></button>-->
   <script type="text/javascript">
     $( document ).ready(function() {
       $.material.init();
       $("[rel='tooltip']").tooltip();
     //   $('#modal').modal('show')
+    var links = [
+    {
+      "bgcolor":"#FFC107",
+      "icon":"+"
+    },
+    {
+      // "url":"#",
+      "bgcolor":"#3F51B5",
+      "color":"#fffff",
+      "icon":"<i class='mdi-image-photo'></i>",
+      "target":"_blank"
+    },
+    {
+      // "url":"#",
+      "tz":"('#modal').modal('show')",
+      "bgcolor":"#FF5252",
+      "color":"white",
+      "icon":"<i class='mdi-image-edit'></i>", 
+      "rel" : "tooltip",
+      "data-placement":"left",
+      "target":"_blank"
+
+    }
+    ]
+
+      $('.kc_fab_wrapper').kc_fab(links);
     });
   </script>
 </body>
 </html>
+r
