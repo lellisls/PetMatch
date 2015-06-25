@@ -11,11 +11,11 @@
             </a>
         </div>
         <li class="divider"></li>
-        <% (2..3).each do | i | %>
+        <% (2..3).each do %>
         <div class="notifications-wrapper">
             <a class="content" href="#">
             <div class="notification-item">
-            <h4 class="item-title"><strong>Fulano <%= i %> </strong>  · <%= i %> days ago</h4>
+            <h4 class="item-title"><strong><%= Faker::Name.name %> </strong>  · <%= Faker::Number.digit %>h</h4>
             <p class="item-info"><%=Faker::Lorem.sentence(3, true) %> ...</p>
             </div>
             </a>
