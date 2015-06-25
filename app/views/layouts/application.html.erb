@@ -14,7 +14,7 @@
     <div class="container-fluid">
       <ul class="nav navbar-nav navbar-left">
           <!-- <li> <a class="navbar-brand" href="#"> <i class="mdi-action-home"></i> </a> </li> -->
-          <li> <a class="navbar-brand" href="#"> <%= image_tag('home.svg', :class=>'doghouse') %> </a> </li>
+          <li> <a class="navbar-brand" href="<%=request.base_url%>"> <%= image_tag('petmatch.svg', :class=>'doghouse') %> </a> </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li data-match-route="/" class="dropdown">
@@ -129,23 +129,24 @@
   </div>
 
   
-  <!--<button onclick="$('#modal').modal('show')" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add " rel = "tooltip" data-toggle="tooltip" data-placement="left" title="" data-original-title="Postar"></button>-->
+  <!--<button onclick="" id="floating-button" class="btn btn-danger btn-fab btn-raised mdi-content-add " rel = "tooltip" data-toggle="tooltip" data-placement="left" title="" data-original-title="Postar"></button>-->
   <script type="text/javascript">
     $( document ).ready(function() {
       $.material.init();
-      $("[rel='tooltip']").tooltip();
     //   $('#modal').modal('show')
     var links = [
     {
       "bgcolor":"#FFC107",
-      "icon":"+"
+      "icon":"+",
+      "id" : "postar"
     },
     {
       // "url":"#",
       "bgcolor":"#3F51B5",
       "color":"#fffff",
       "icon":"<i class='mdi-image-photo'></i>",
-      "target":"_blank"
+      "target":"_blank",
+      "id" : "postar-foto"
     },
     {
       // "url":"#",
@@ -153,16 +154,24 @@
       "bgcolor":"#FF5252",
       "color":"white",
       "icon":"<i class='mdi-image-edit'></i>", 
-      "rel" : "tooltip",
-      "data-placement":"left",
-      "target":"_blank"
-
+      "id" : "postar-texto"
     }
     ]
-
-      $('.kc_fab_wrapper').kc_fab(links);
+    $('.kc_fab_wrapper').kc_fab(links);
+    $('#postar-texto').attr('onclick',"$('#modal').modal('show')");
+    var setTooltip = function (elm, placement, text) {
+      elm.attr('rel','tooltip');
+      elm.attr('data-placement',placement);
+      elm.attr('data-toggle','tooltip');
+      elm.attr('title','');
+      elm.attr('data-original-title',text);
+      elm.tooltip();
+    }
+    $('#postar-texto').attr('onclick',"$('#modal').modal('show')");
+    setTooltip( $('#postar-texto'), "left", "Texto" );
+    setTooltip( $('#postar-foto'), "left", "Imagem" );
+    setTooltip( $('#postar'), "left", "Postar" );
     });
   </script>
 </body>
 </html>
-r
