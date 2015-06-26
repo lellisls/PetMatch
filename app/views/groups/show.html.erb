@@ -6,19 +6,40 @@
 <% end %>
 
 
+<%= render "shared/postartexto" %>
+<%= render "shared/postarfoto" %>
+
 <script type="text/javascript" >
 $( document ).ready(function( ) { 
     var links = [
         {
-            "url":  "#",
             "bgcolor":"#FFC107",
             "icon":"+",
-            "id" : "novoPost"
+            "id" : "postar"
+        },
+        {
+            // "url":"#",
+            "bgcolor":"#3F51B5",
+            "color":"#fffff",
+            "icon":"<i class='mdi-image-photo'></i>",
+            "target":"_blank",
+            "id" : "postar-foto"
+        },
+        {
+        // "url":"#",
+            "bgcolor":"#FF5252",
+            "color":"white",
+            "icon":"<i class='mdi-image-edit'></i>", 
+            "id" : "postar-texto"
         }
     ]
     $('.kc_fab_wrapper').kc_fab(links);
+    $('#postar-texto').attr('onclick','#modal');
+    $('#postar-foto').attr('onclick','#modal-foto');
+    setTooltip( $('#postar-texto'), "left", "Texto" );
+    setTooltip( $('#postar-foto'), "left", "Imagem" );
+    setTooltip( $('#postar'), "left", "Postar" );
     
-    setTooltip( $('#novoPost'), "left", "Postar no grupo" );
     sendMessage('<%=notice%>');
 });
 </script>
