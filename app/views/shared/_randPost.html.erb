@@ -1,0 +1,26 @@
+<div class="well well-lg">
+  <div class="media">
+      <div class="media-left">
+        <img data-src="holder.js/48x48" src="" class="user-photo">
+      </div>
+      <div class="media-body">
+        <div class="post-heading">
+          <h4 class="media-heading"><%= Faker::Name.name %></h4>
+          <p><%= Faker::Number.digit %>h</p>
+        </div>
+       
+      </div>
+  </div>
+  <div class="post-content">
+    <%= Faker::Lorem.paragraph(2, true) %>
+    <% if rand(0..100) < 50 then %>
+      <div class="photo-content">
+        <img data-src="holder.js/400x400" src="" class="photo-content"></img>
+      </div>
+    <% end %>
+    <div class="post-options">
+         <a href="#">curtir</a> - <a href="#">comentar</a>
+    </div>
+
+  </div>
+</div>

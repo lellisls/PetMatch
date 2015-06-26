@@ -28,12 +28,14 @@ var setTooltip = function (elm, placement, text) {
 }
 
 var sendMessage = function(message, icon) {
-    if( icon ) {
-        message = '<i class="' + icon + '"> </i> ' + message;
+    if(message){
+        if( icon ) {
+            message = '<i class="' + icon + '"> </i> ' + message;
+        }
+        $('#alert').html(message);
+        $('#alert').fadeIn();
+        $("#alert").delay(2000).fadeOut("slow", function () { $(this).hide(); });
     }
-    $('#alert').html(message);
-    $('#alert').fadeIn();
-    $("#alert").delay(2000).fadeOut("slow", function () { $(this).hide(); });
 }
 
 var inicializar = function() {

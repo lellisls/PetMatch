@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @group.name %></h1>
+<p><%= @group.description %> - <%= link_to 'Edit', edit_group_path(@group) %> | <%= link_to 'Back', groups_path %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+<% (0..3).each do %>
+ <%= render "shared/randPost" %>
+<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @group.description %>
-</p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<script type="text/javascript">
+  sendMessage('<%=notice%>');
+</script>

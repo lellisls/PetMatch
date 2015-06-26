@@ -1,64 +1,42 @@
-<div class="well well-lg">
-  <div class="media">
-      <div class="media-left">
-        <%= image_tag "ronivaldo.png", :class=>"user-photo" %>
-      </div>
-      <div class="media-body">
-        <div class="post-heading">
-          <h4 class="media-heading">Ronivaldo</h4>
-          <p>2h</p>
-        </div>
-        <div class="post-content">
-          PetMatch é só alegria!
-        </div>
-      </div>
-  </div>
-</div>
+<!--<div class="well well-lg">-->
+<!--  <div class="media">-->
+<!--      <div class="media-left">-->
+<!--        <%= image_tag "ronivaldo.png", :class=>"user-photo" %>-->
+<!--      </div>-->
+<!--      <div class="media-body">-->
+<!--        <div class="post-heading">-->
+<!--          <h4 class="media-heading">Ronivaldo</h4>-->
+<!--          <p>2h</p>-->
+<!--        </div>-->
+<!--        <div class="post-content">-->
+<!--          PetMatch é só alegria!-->
+<!--        </div>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</div>-->
 
-<div class="well well-lg">
-  <div class="media">
-      <div class="media-left">
-        <%= image_tag "gertrudez.png", :class=>"user-photo" %>
-      </div>
-      <div class="media-body">
-        <div class="post-heading">
-          <h4 class="media-heading">Gertrudez</h4>
-          <p>4h</p>
-        </div>
-      </div>
-  </div>
-  <div class="post-content">
-  Hoje eu fui ao Jô Soares falar sobre os meus Gatos S2.
-  <div class="photo-content">
-    <%= image_tag "maite-proenca.jpg" %>
-  </div>
-  </div>
-</div>
+<!--<div class="well well-lg">-->
+<!--  <div class="media">-->
+<!--      <div class="media-left">-->
+<!--        <%= image_tag "gertrudez.png", :class=>"user-photo" %>-->
+<!--      </div>-->
+<!--      <div class="media-body">-->
+<!--        <div class="post-heading">-->
+<!--          <h4 class="media-heading">Gertrudez</h4>-->
+<!--          <p>4h</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--  <div class="post-content">-->
+<!--  Hoje eu fui ao Jô Soares falar sobre os meus Gatos S2.-->
+<!--  <div class="photo-content">-->
+<!--    <%= image_tag "maite-proenca.jpg" %>-->
+<!--  </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <% (0..3).each do %>
-
-<div class="well well-lg">
-  <div class="media">
-      <div class="media-left">
-        <img data-src="holder.js/48x48" src="" class="user-photo">
-      </div>
-      <div class="media-body">
-        <div class="post-heading">
-          <h4 class="media-heading"><%= Faker::Name.name %></h4>
-          <p><%= Faker::Number.digit %>h</p>
-        </div>
-       
-      </div>
-  </div>
-  <div class="post-content">
-    <%= Faker::Lorem.paragraph(2, true) %>
-    <% if rand(0..100) < 25 then %>
-      <div class="photo-content">
-        <img data-src="holder.js/400x400" src="" class="photo-content"></img>
-      </div>
-    <% end %>
-  </div>
-</div>
+ <%= render "shared/randPost" %>
 <% end %>
 
 
