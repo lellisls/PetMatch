@@ -33,9 +33,9 @@
 
 .photo-content img {
   margin-top: 10px;
-  max-height 200px;
+  max-height: 200px;
   max-width: 100%;
-  position: center;
+  text-align: center;
   width: auto;
   height: auto;
   display: block;
