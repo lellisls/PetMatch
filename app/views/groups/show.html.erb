@@ -6,6 +6,19 @@
 <% end %>
 
 
-<script type="text/javascript">
-  sendMessage('<%=notice%>');
+<script type="text/javascript" >
+$( document ).ready(function( ) { 
+    var links = [
+        {
+            "url":  "#",
+            "bgcolor":"#FFC107",
+            "icon":"+",
+            "id" : "novoPost"
+        }
+    ]
+    $('.kc_fab_wrapper').kc_fab(links);
+    
+    setTooltip( $('#novoPost'), "left", "Postar no grupo" );
+    sendMessage('<%=notice%>');
+});
 </script>

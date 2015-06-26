@@ -1,0 +1,8 @@
+<% if rand(0..100) < 50 then %>
+<div class="message-left">
+<% else %>
+<div class="message-right">
+<% end %>
+     <h5><%= Faker::Name.name %> - <%= Faker::Number.digit %>h</h5>
+     <p><%= Faker::Lorem.paragraph(2, true) %></p>
+</div>

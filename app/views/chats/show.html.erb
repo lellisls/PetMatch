@@ -1,18 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @chat.name %></h1>
+<p><%= @chat.people %> - <%= link_to 'Edit', edit_chat_path(@chat) %> | <%= link_to 'Back', chats_path %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chat.name %>
-</p>
+<% (0..3).each do %>
+ <%= render "shared/randChat" %>
+<% end %>
 
-<p>
-  <strong>People:</strong>
-  <%= @chat.people %>
-</p>
-
-<%= link_to 'Edit', edit_chat_path(@chat) %> |
-<%= link_to 'Back', chats_path %>
-
-<script type="text/javascript">
-  sendMessage('<%=notice%>');
+<script type="text/javascript" >
+$( document ).ready(function( ) { 
+    var links = [
+        {
+            "url":  "#",
+            "bgcolor":"#FFC107",
+            "icon":"+",
+            "id" : "novaMsg"
+        }
+    ]
+    $('.kc_fab_wrapper').kc_fab(links);
+    
+    setTooltip( $('#novaMsg'), "left", "Postar no chat" );
+    sendMessage('<%=notice%>');
+});
 </script>
