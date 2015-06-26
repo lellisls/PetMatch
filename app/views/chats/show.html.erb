@@ -5,19 +5,42 @@
  <%= render "shared/randChat" %>
 <% end %>
 
+<%= render "shared/enviaranexo" %>
+<%= render "shared/enviarfoto" %>
+
 <script type="text/javascript" >
 $( document ).ready(function( ) { 
     var links = [
         {
-            "url":  "#",
+            // "url":  "<%= new_chat_path %>",
             "bgcolor":"#FFC107",
             "icon":"+",
-            "id" : "novaMsg"
+            "id" : "acoes"
+        },
+        {
+            // "url":"#",
+            "bgcolor":"#3F51B5",
+            "color":"#fffff",
+            "icon":"<i class='mdi-image-photo'></i>",
+            "target":"_blank",
+            "id" : "postar-foto"
+        },
+        {
+        // "url":"#",
+            "bgcolor":"#FF5252",
+            "color":"white",
+            "icon":"<i class='mdi-file-attachment'></i>", 
+            "id" : "postar-anexo"
         }
     ]
     $('.kc_fab_wrapper').kc_fab(links);
-    
-    setTooltip( $('#novaMsg'), "left", "Postar no chat" );
-    sendMessage('<%=notice%>');
+
+    $('#postar-texto').attr('onclick','#modal-anexo');
+    $('#postar-foto').attr('onclick','#modal-foto');
+
+    setTooltip( $('#postar-anexo'), "left", "Anexo" );
+    setTooltip( $('#postar-foto'), "left", "Imagem" );
+    setTooltip( $('#acoes'), "left", "Enviar" );
+    sendMessage('<%=notice%>');    
 });
 </script>

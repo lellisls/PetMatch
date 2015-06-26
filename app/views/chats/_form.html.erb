@@ -23,6 +23,15 @@
       <%= f.text_field :people, :class => "form-control floating-label", :id => "focusedInput"  %>
     </div>
   </div>
+  <% if params[:action] == "new" then %>
+  <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Sua mensagem</label>
+      <div class="col-lg-10">
+          <textarea class="form-control" rows="3" id="textArea"></textarea>
+          <!--<span class="help-block"</span>-->
+      </div>
+  </div>
+  <% end %>
   <div class="form-group">
     <%= f.submit "Submeter", :class => "btn btn-primary pull-right" %>
   </div>
