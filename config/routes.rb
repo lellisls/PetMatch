@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :chats
+
+  resources :groups
+
   get 'bootstrap/index'
-  get 'bootstrap/groups'
   root 'bootstrap#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

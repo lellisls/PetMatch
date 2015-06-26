@@ -1,0 +1,38 @@
+<h1>Grupos</h1>
+
+<% @groups.each do |group| %>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6 col-lg-7">
+                <h4><%= group.name %></h4>
+                <p> <%= group.description %></p>
+            </div>
+            <div class="col-md-6 col-lg-5">
+                <div class="btn-group">
+                  <!--edit_group_path(group)-->
+                    <td><%= link_to 'Acessar', group, :class => "btn btn-sm btn-default"%></td>
+                    <td><%= link_to 'Deixar', group, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %></td>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+
+<script type="text/javascript" >
+$( document ).ready(function( ) { 
+    var links = [
+        {
+            "url":  "<%= new_group_path %>",
+            "bgcolor":"#FFC107",
+            "icon":"+",
+            "id" : "novoGrupo"
+        }
+    ]
+    $('.kc_fab_wrapper').kc_fab(links);
+    
+    setTooltip( $('#novoGrupo'), "left", "Novo Grupo" );
+});
+</script>
+

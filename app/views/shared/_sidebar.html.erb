@@ -1,11 +1,11 @@
 <nav id="sidebar" class=" col-sm-2  menu" >
     <ul>
-      <a href="#">
+      <%= link_to chats_path() do %>
         <li class="withripple">
-          <i class="mdi-communication-message"></i>Mensagens
+          <i class="mdi-communication-message"></i>Chats
         </li>
-      </a>
-      <%= link_to controller: "bootstrap", action: "groups" do %>
+      <% end %>
+      <%= link_to groups_path() do %>
         <li class="withripple">
           <i class="mdi-social-people-outline"></i>Grupos
         </li>

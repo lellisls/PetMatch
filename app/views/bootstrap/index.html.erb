@@ -25,11 +25,13 @@
           <h4 class="media-heading">Gertrudez</h4>
           <p>4h</p>
         </div>
-        <div class="post-content">
-          Hoje eu fui ao Jô Soares falar sobre os meus Gatos S2.
-          <%= image_tag "maite-proenca.jpg", :class => "photo-content" %>
-        </div>
       </div>
+  </div>
+  <div class="post-content">
+  Hoje eu fui ao Jô Soares falar sobre os meus Gatos S2.
+  <div class="photo-content">
+    <%= image_tag "maite-proenca.jpg" %>
+  </div>
   </div>
 </div>
 
@@ -45,13 +47,51 @@
           <h4 class="media-heading"><%= Faker::Name.name %></h4>
           <p><%= Faker::Number.digit %>h</p>
         </div>
-        <div class="post-content">
-          <%= Faker::Lorem.paragraph(2, true) %>
-          <% if rand(0..100) < 25 then %>
-            <img data-src="holder.js/800x400" src="" class="photo-content"></img>
-          <% end %>
-        </div>
+       
       </div>
+  </div>
+  <div class="post-content">
+    <%= Faker::Lorem.paragraph(2, true) %>
+    <% if rand(0..100) < 25 then %>
+      <div class="photo-content">
+        <img data-src="holder.js/400x400" src="" class="photo-content"></img>
+      </div>
+    <% end %>
   </div>
 </div>
 <% end %>
+
+
+<%= render "shared/postartexto" %>
+<%= render "shared/postarfoto" %>
+
+<script type="text/javascript" >
+$( document ).ready(function( ) { 
+    var links = [
+        {
+            "bgcolor":"#FFC107",
+            "icon":"+",
+            "id" : "postar"
+        },
+        {
+            // "url":"#",
+            "bgcolor":"#3F51B5",
+            "color":"#fffff",
+            "icon":"<i class='mdi-image-photo'></i>",
+            "target":"_blank",
+            "id" : "postar-foto"
+        },
+        {
+        // "url":"#",
+            "bgcolor":"#FF5252",
+            "color":"white",
+            "icon":"<i class='mdi-image-edit'></i>", 
+            "id" : "postar-texto"
+        }
+    ]
+    $('.kc_fab_wrapper').kc_fab(links);
+    setTooltip( $('#postar-texto'), "left", "Texto" );
+    setTooltip( $('#postar-foto'), "left", "Imagem" );
+    setTooltip( $('#postar'), "left", "Postar" );
+});
+</script>

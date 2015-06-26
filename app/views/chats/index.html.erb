@@ -1,0 +1,38 @@
+<h1>Chats</h1>
+
+<% @chats.each do |chat| %>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6 col-lg-7">
+                <h4><%= chat.name %></h4>
+                <p> <%= chat.people %></p>
+            </div>
+            <div class="col-md-6 col-lg-5">
+                <div class="btn-group">
+                  <!--edit_group_path(group)-->
+                    <td><%= link_to 'Acessar', chat, :class => "btn btn-sm btn-default"%></td>
+                    <td><%= link_to 'Deixar', chat, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %></td>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+
+
+<script type="text/javascript" >
+$( document ).ready(function( ) { 
+    var links = [
+        {
+            "url":  "<%= new_chat_path %>",
+            "bgcolor":"#FFC107",
+            "icon":"+",
+            "id" : "novoChat"
+        }
+    ]
+    $('.kc_fab_wrapper').kc_fab(links);
+
+    setTooltip( $('#novoChat'), "left", "Novo Chat" );
+});
+</script>

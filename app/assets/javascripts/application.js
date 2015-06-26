@@ -38,33 +38,4 @@ var sendMessage = function(message, icon) {
 
 var inicializar = function() {
     $.material.init();
-    //   $('#modal').modal('show')
-    var links = [
-        {
-            "bgcolor":"#FFC107",
-            "icon":"+",
-            "id" : "postar"
-        },
-        {
-            // "url":"#",
-            "bgcolor":"#3F51B5",
-            "color":"#fffff",
-            "icon":"<i class='mdi-image-photo'></i>",
-            "target":"_blank",
-            "id" : "postar-foto"
-        },
-        {
-        // "url":"#",
-            "bgcolor":"#FF5252",
-            "color":"white",
-            "icon":"<i class='mdi-image-edit'></i>", 
-            "id" : "postar-texto"
-        }
-    ]
-    $('.kc_fab_wrapper').kc_fab(links);
-    $('#postar-texto').attr('onclick',"#modal");
-    $('#postar-foto').attr('onclick',"#modal-foto");
-    setTooltip( $('#postar-texto'), "left", "Texto" );
-    setTooltip( $('#postar-foto'), "left", "Imagem" );
-    setTooltip( $('#postar'), "left", "Postar" );
 }
