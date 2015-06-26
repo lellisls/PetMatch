@@ -1,9 +1,29 @@
 <h1><%= @chat.name %></h1>
 <p><%= @chat.people %> - <%= link_to 'Editar conversa', edit_chat_path(@chat) %> | <%= link_to 'Voltar', chats_path %></p>
 
-<% (0..3).each do %>
- <%= render "shared/randChat" %>
-<% end %>
+
+<div id="browser-window" ng-app ng-controller="NgChatCtrl">
+    <div id="viewport" class="panel">
+        <div id="viewport-content">
+            <% (0..3).each do %>
+                <%= render "shared/randChat" %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="panel-footer">
+        <form class="row row-chat">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inputMessage" placeholder="Escreva aqui sua mensagem.">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" onclick="sendMessage('Mensagem enviada');" type="button">Enviar</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 <%= render "shared/enviaranexo" %>
 <%= render "shared/enviarfoto" %>
