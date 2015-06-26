@@ -1,5 +1,5 @@
 <h1><%= @chat.name %></h1>
-<p><%= @chat.people %> - <%= link_to 'Edit', edit_chat_path(@chat) %> | <%= link_to 'Back', chats_path %></p>
+<p><%= @chat.people %> - <%= link_to 'Editar conversa', edit_chat_path(@chat) %> | <%= link_to 'Voltar', chats_path %></p>
 
 <% (0..3).each do %>
  <%= render "shared/randChat" %>
